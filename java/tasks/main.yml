@@ -1,8 +1,4 @@
 ---
 # tasks file for java
-- name: Install openJDK java
-  apt:
-    name: "{{item}}"
-    state: present
-  with_items:
-   - openjdk-8-jdk
+- include: install_JDK.yaml
+- include: Uninstall_JDK.yaml
