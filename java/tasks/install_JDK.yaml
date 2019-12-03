@@ -5,3 +5,14 @@
     state: present
   with_items:
    - openjdk-8-jdk
+- name: create environment variable file with content
+  copy:
+    dest: /etc/environment
+    content: |
+      JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/"
+- name: Source the environment of java file
+  shell: "source /etc/environment"
+  args:
+     executable: /bin/bash
+ 
+
