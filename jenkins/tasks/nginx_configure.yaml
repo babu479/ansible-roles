@@ -1,0 +1,10 @@
+---
+- name: configure nginx web server
+  template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
+- name: Configure Nginx to serve Jenkins
+  template: src=jenkins.conf.j2 dest=/etc/nginx/sites-available/jenkins.conf
+- name: Remove Nginx default configuration
+  file: path=/etc/nginx/sites-enabled/default state=absent
+- name: Enable Jenkins Nginx configuration
+  file: src=/etc/nginx/sites-available/jenkins.conf dest=/etc/nginx/sites-enabled/jenkins.conf state=link
+  notify: restart nginx

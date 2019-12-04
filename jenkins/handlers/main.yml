@@ -1,2 +1,6 @@
 ---
 # handlers file for jenkins
+- name: start jenkins
+  service: name=jenkins state=started
+- name: restart nginx
+  service: name=nginx state=started
