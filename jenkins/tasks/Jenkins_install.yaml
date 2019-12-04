@@ -1,6 +1,6 @@
 ---
 - name: Install python software properties
-  apt: pkg=python-software-properties state=installed update-cache=yes
+  apt: pkg=software-properties-common state=present  update-cache=yes
 
 - name: Add Jenkins CI repositories to APT sources list
   apt_repository: repo='deb http://pkg.jenkins-ci.org/debian binary/' state=present

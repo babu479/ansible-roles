@@ -1,7 +1,5 @@
 ---
 - name: Uninstall_JDK
-  apt:
-    pkg: "{{item}}"
-    state: absent
-  with_items:
-   - openjdk-8-jdk
+  shell: "apt-get remove openjdk-* -y"
+  warn: False
+  

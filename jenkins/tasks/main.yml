@@ -1,2 +1,6 @@
 ---
 # tasks file for jenkins
+- include: Jenkins_install.yaml tag=jenkins
+- include: nginx_configure.yaml tag=nginx
+
+

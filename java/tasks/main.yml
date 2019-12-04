@@ -1,4 +1,4 @@
 ---
 # tasks file for java
 - include: install_JDK.yaml
-- include: Uninstall_JDK.yaml
+#- include: Uninstall_JDK.yaml

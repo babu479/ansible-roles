@@ -4,7 +4,7 @@ upstream jenkins{
 
 server{
     listen      80;
-    server_name {{ inventory_hostname_short }};
+    server_name {{ inventory_hostname }};
 
     access_log  /var/log/nginx/jenkins.access.log;
     error_log   /var/log/nginx/jenkins.error.log;
